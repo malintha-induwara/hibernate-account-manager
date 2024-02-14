@@ -1,0 +1,52 @@
+@import '../fonts/Fonts.css';
+
+.pane{
+    -fx-background-color: white;
+}
+
+.pane-image{
+    -fx-background-color:  #474554;
+}
+
+.text-description{
+    -fx-font-family: 'Open Sans Regular';
+}
+
+.mfx-text-field{
+    -mfx-main: #a29bfe;
+    -fx-font-size: 14;
+    -fx-font-family: 'Visby Round CF Medium';
+}
+
+.mfx-text-field-error{
+    -mfx-main: #ff3e56;
+    -fx-font-size: 14;
+    -fx-font-family: 'Visby Round CF Medium';
+}
+
+
+.mfx-text-field:floating .floating-text{
+    -fx-text-fill: #636e72;
+    -fx-font-family: 'Visby Round CF Medium';
+
+}
+.mfx-text-field .floating-text {
+    -fx-font-size: 15;
+    -fx-text-fill: #636e72;
+    -fx-font-family: 'Visby Round CF Medium';
+}
+
+
+.mfx-button-login{
+    -fx-font-size: 14px;
+    -fx-font-family: 'Roboto Bold';
+    -fx-background-color: #a29bfe;
+    -fx-text-fill: #ffffff;
+}
+
+.mfx-button-createAccount{
+    -fx-font-size: 14px;
+    -fx-font-family: 'Roboto Bold';
+    -fx-background-color: #2d3436;
+    -fx-text-fill: #ffffff;
+}
