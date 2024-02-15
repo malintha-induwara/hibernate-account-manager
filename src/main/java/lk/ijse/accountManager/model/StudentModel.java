@@ -46,6 +46,16 @@ public class StudentModel {
         return true;
     }
 
+    public boolean deleteStudent(int studentId) {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Student student = session.get(Student.class, studentId);
+        session.delete(student);
+        transaction.commit();
+        session.close();
+        return true;
+    }
+
 
 
 }

@@ -145,6 +145,33 @@ public class ManageAccountFormController {
 
 
 
+    @FXML
+    void btnDeleteAccountOnAction(ActionEvent event) {
+
+        String studentId = txtId.getText();
+
+        boolean isTxtIdExist = !studentId.isEmpty();
+
+        if (!isTxtIdExist) {
+            new Alert(Alert.AlertType.ERROR, "Enter a  Id").show();
+            return;
+        }
+
+
+        Student student = studentModel.searchStudent(Integer.parseInt(studentId));
+        if (student == null) {
+            new Alert(Alert.AlertType.ERROR, "Student Not Found").show();
+            return;
+        }
+
+        boolean isDeleted = studentModel.deleteStudent(Integer.parseInt(studentId));
+        if (!isDeleted) {
+            new Alert(Alert.AlertType.INFORMATION, "Student Didn't Delete").show();
+        }
+
+        new Alert(Alert.AlertType.INFORMATION, "Student Deleted Successfully").show();
+        clearFields();
+    }
 
 
     private void clearFields() {
