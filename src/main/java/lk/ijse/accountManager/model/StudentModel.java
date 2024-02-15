@@ -31,5 +31,22 @@ public class StudentModel {
     }
 
 
+    public boolean updateStudent(int studentId,Student student) {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Student existingStudent = session.get(Student.class, studentId);
+        existingStudent.setUserName(student.getUserName());
+        existingStudent.setName(student.getName());
+        existingStudent.setBirthdate(student.getBirthdate());
+        existingStudent.setNumbers(student.getNumbers());
+        existingStudent.setPassword(student.getPassword());
+        session.update(existingStudent);
+        transaction.commit();
+        session.close();
+        return true;
+    }
+
+
+
 }
 

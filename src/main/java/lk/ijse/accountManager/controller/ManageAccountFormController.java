@@ -105,6 +105,44 @@ public class ManageAccountFormController {
 
     }
 
+    @FXML
+    void btnUpdateAccountOnAction(ActionEvent event) {
+
+        boolean isValidate = validateFields();
+
+        String studentId = txtId.getText();
+
+        boolean isTxtIdExist = !studentId.isEmpty();
+
+        if (!isValidate || !isTxtIdExist) {
+            return;
+        }
+
+        boolean isUserExist = studentModel.searchStudent(Integer.parseInt(studentId)) != null;
+        if (!isUserExist) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Id").show();
+            return;
+        }
+
+        String userName = txtUsername.getText();
+        String firstName = txtFirstName.getText();
+        String lastName = txtLastName.getText();
+        String mobileNumber = txtMobileNumber.getText();
+        String homeNumber = txtHomeNumber.getText();
+        String password = txtPassword.getText();
+        LocalDate birthdate = dpBirthdate.getValue();
+
+        Student student = new Student(userName, firstName, lastName, mobileNumber, homeNumber, password, birthdate);
+
+        boolean isUpdated = studentModel.updateStudent(Integer.parseInt(studentId), student);
+
+        if (!isUpdated) {
+            new Alert(Alert.AlertType.INFORMATION, "Student Didn't Update").show();
+        }
+
+        new Alert(Alert.AlertType.INFORMATION, "Student Updated Successfully").show();
+    }
+
 
 
 
