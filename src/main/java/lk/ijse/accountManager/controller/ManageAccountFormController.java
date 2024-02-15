@@ -3,10 +3,12 @@ package lk.ijse.accountManager.controller;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.util.regex.Pattern;
 
 public class ManageAccountFormController {
@@ -35,6 +37,12 @@ public class ManageAccountFormController {
     @FXML
     private MFXTextField txtId;
 
+
+
+    @FXML
+    void btnCancelOnAction(ActionEvent event) throws IOException {
+        System.exit(0);
+    }
 
 
 
