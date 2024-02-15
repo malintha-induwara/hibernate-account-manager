@@ -17,5 +17,19 @@ public class StudentModel {
     }
 
 
+    public Student searchStudent(int studentId) {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        Student student = session.get(Student.class, studentId);
+        if (student == null) {
+            return null;
+        }
+        transaction.commit();
+        Hibernate.initialize(student.getNumbers()); // Initialize the numbers collection
+        session.close();
+        return student;
+    }
+
+
 }
 

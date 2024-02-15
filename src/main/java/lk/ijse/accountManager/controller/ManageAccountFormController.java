@@ -75,6 +75,36 @@ public class ManageAccountFormController {
 
 
 
+    @FXML
+    void btnSearchAccountOnAction(ActionEvent event) {
+
+        boolean isTxtIdExist = !txtId.getText().isEmpty();
+
+        if (!isTxtIdExist) {
+            new Alert(Alert.AlertType.ERROR, "Enter a  Id").show();
+            return;
+        }
+
+
+        int studentId = Integer.parseInt(txtId.getText());
+        Student student = studentModel.searchStudent(studentId);
+        if (student == null) {
+            new Alert(Alert.AlertType.ERROR, "Student Not Found").show();
+            clearFields();
+            return;
+        }
+
+        txtUsername.setText(student.getUserName());
+        txtFirstName.setText(student.getName().getFistName());
+        txtLastName.setText(student.getName().getLastName());
+        txtMobileNumber.setText(student.getNumbers().get(0).getNumber());
+        txtHomeNumber.setText(student.getNumbers().get(1).getNumber());
+        txtPassword.setText(student.getPassword());
+        txtReEnterPassword.setText(student.getPassword());
+        dpBirthdate.setValue(student.getBirthdate());
+
+    }
+
 
 
 
