@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 
 public class ManageAccountFormController {
 
+    private final StudentModel studentModel = new StudentModel();
     @FXML
     private AnchorPane paneCreateAccount;
     @FXML
@@ -37,17 +38,14 @@ public class ManageAccountFormController {
     private MFXPasswordField txtReEnterPassword;
     @FXML
     private Text lblErrorMsg;
-
     @FXML
     private MFXTextField txtId;
-
-
-    private final StudentModel studentModel = new StudentModel();
 
     @FXML
     void btnCancelOnAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
+
     @FXML
     void btnCreateAccountOnAction(ActionEvent event) {
 
@@ -72,7 +70,6 @@ public class ManageAccountFormController {
             clearFields();
         }
     }
-
 
 
     @FXML
@@ -142,7 +139,6 @@ public class ManageAccountFormController {
 
         new Alert(Alert.AlertType.INFORMATION, "Student Updated Successfully").show();
     }
-
 
 
     @FXML
