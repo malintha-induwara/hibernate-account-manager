@@ -9,7 +9,7 @@ import org.hibernate.Transaction;
 public class StudentModel {
     public boolean saveStudent(Student testStudent) {
         Session session = SessionFactoryConfig.getInstance().getSession();
-        Transaction transaction =session.beginTransaction();
+        Transaction transaction = session.beginTransaction();
         session.save(testStudent);
         transaction.commit();
         session.close();
@@ -31,7 +31,7 @@ public class StudentModel {
     }
 
 
-    public boolean updateStudent(int studentId,Student student) {
+    public boolean updateStudent(int studentId, Student student) {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
         Student existingStudent = session.get(Student.class, studentId);
@@ -55,7 +55,6 @@ public class StudentModel {
         session.close();
         return true;
     }
-
 
 
 }
