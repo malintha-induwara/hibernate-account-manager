@@ -5,10 +5,14 @@ import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lk.ijse.accountManager.entity.Student;
+import lk.ijse.accountManager.model.StudentModel;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.regex.Pattern;
 
 public class ManageAccountFormController {
@@ -38,11 +42,37 @@ public class ManageAccountFormController {
     private MFXTextField txtId;
 
 
+    private final StudentModel studentModel = new StudentModel();
 
     @FXML
     void btnCancelOnAction(ActionEvent event) throws IOException {
         System.exit(0);
     }
+    @FXML
+    void btnCreateAccountOnAction(ActionEvent event) {
+
+        boolean isValidate = validateFields();
+        if (!isValidate) {
+            return;
+        }
+
+        String userName = txtUsername.getText();
+        String firstName = txtFirstName.getText();
+        String lastName = txtLastName.getText();
+        String mobileNumber = txtMobileNumber.getText();
+        String homeNumber = txtHomeNumber.getText();
+        String password = txtPassword.getText();
+        LocalDate birthdate = dpBirthdate.getValue();
+
+        Student student = new Student(userName, firstName, lastName, mobileNumber, homeNumber, password, birthdate);
+        boolean isSaved = studentModel.saveStudent(student);
+
+        if (isSaved) {
+            new Alert(Alert.AlertType.INFORMATION, "Student Saved Successfully").show();
+            clearFields();
+        }
+    }
+
 
 
 
