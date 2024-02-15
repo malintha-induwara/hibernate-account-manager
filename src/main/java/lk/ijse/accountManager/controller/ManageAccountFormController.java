@@ -38,6 +38,20 @@ public class ManageAccountFormController {
 
 
 
+
+
+
+    private void clearFields() {
+        txtUsername.clear();
+        txtFirstName.clear();
+        txtLastName.clear();
+        txtMobileNumber.clear();
+        txtHomeNumber.clear();
+        txtPassword.clear();
+        txtReEnterPassword.clear();
+        dpBirthdate.setValue(null);
+    }
+
     private boolean validateFields() {
 
         String userName = txtUsername.getText();
