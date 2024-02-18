@@ -5,9 +5,13 @@ import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import lk.ijse.accountManager.entity.Student;
 import lk.ijse.accountManager.model.StudentModel;
 
@@ -42,8 +46,12 @@ public class ManageAccountFormController {
     private MFXTextField txtId;
 
     @FXML
-    void btnCancelOnAction(ActionEvent event) throws IOException {
-        System.exit(0);
+    void btnViewAccountOnAction(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/view/viewAccountForm.fxml"));
+        Scene scene = new Scene(rootNode);
+        Stage primaryStage = (Stage) this.paneCreateAccount.getScene().getWindow();
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("View Account");
     }
 
     @FXML

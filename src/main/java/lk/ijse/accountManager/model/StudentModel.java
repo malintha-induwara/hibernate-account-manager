@@ -6,6 +6,8 @@ import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 public class StudentModel {
     public boolean saveStudent(Student testStudent) {
         Session session = SessionFactoryConfig.getInstance().getSession();
@@ -57,5 +59,17 @@ public class StudentModel {
     }
 
 
+    public List<Student> getAllStudents() {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+        List<Student> studentList = session.createQuery("from Student", Student.class).list();
+
+        for (Student student : studentList) {
+            Hibernate.initialize(student.getNumbers());
+        }
+        transaction.commit();
+        session.close();
+        return studentList;
+    }
 }
 

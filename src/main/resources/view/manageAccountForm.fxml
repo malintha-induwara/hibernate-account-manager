@@ -37,17 +37,17 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="425.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Password:">
+      <Text layoutX="425.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Password:">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="423.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Mobile number:">
+      <Text layoutX="423.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Mobile number:">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="423.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Home number:">
+      <Text layoutX="423.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Home number:">
          <font>
             <Font size="15.0" />
          </font>
@@ -57,7 +57,7 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="425.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Re enter Password:">
+      <Text layoutX="425.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-description" text="Re enter Password:">
          <font>
             <Font size="15.0" />
          </font>
@@ -73,12 +73,12 @@
       <MFXTextField fx:id="txtFirstName" floatMode="DISABLED" layoutX="191.0" layoutY="268.0" prefHeight="44.0" prefWidth="159.0" styleClass="mfx-text-field" />
       <MFXTextField fx:id="txtLastName" floatMode="DISABLED" layoutX="191.0" layoutY="336.0" prefHeight="44.0" prefWidth="159.0" styleClass="mfx-text-field" />
       <MFXDatePicker fx:id="dpBirthdate" layoutX="190.0" layoutY="406.0" prefHeight="44.0" />
-      <MFXTextField fx:id="txtMobileNumber" floatMode="DISABLED" layoutX="575.0" layoutY="69.0" prefHeight="44.0" prefWidth="159.0" styleClass="mfx-text-field" />
-      <MFXTextField fx:id="txtHomeNumber" floatMode="DISABLED" layoutX="575.0" layoutY="141.0" prefHeight="44.0" prefWidth="159.0" styleClass="mfx-text-field" />
-      <MFXPasswordField fx:id="txtPassword" floatMode="DISABLED" layoutX="575.0" layoutY="216.0" prefHeight="44.0" prefWidth="159.0" />
-      <MFXPasswordField fx:id="txtReEnterPassword" floatMode="DISABLED" layoutX="575.0" layoutY="290.0" prefHeight="44.0" prefWidth="159.0" />
-      <MFXButton layoutX="422.0" layoutY="403.0" onAction="#btnCreateAccountOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-login" stylesheets="@../assets/css/Style.css" text="Create " />
-      <MFXButton contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="681.0" layoutY="403.0" onAction="#btnCancelOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-createAccount" stylesheets="@../assets/css/Style.css">
+      <MFXTextField fx:id="txtMobileNumber" floatMode="DISABLED" layoutX="575.0" layoutY="112.0" prefHeight="44.0" prefWidth="159.0" styleClass="mfx-text-field" />
+      <MFXTextField fx:id="txtHomeNumber" floatMode="DISABLED" layoutX="575.0" layoutY="184.0" prefHeight="44.0" prefWidth="159.0" styleClass="mfx-text-field" />
+      <MFXPasswordField fx:id="txtPassword" floatMode="DISABLED" layoutX="575.0" layoutY="259.0" prefHeight="44.0" prefWidth="159.0" />
+      <MFXPasswordField fx:id="txtReEnterPassword" floatMode="DISABLED" layoutX="575.0" layoutY="333.0" prefHeight="44.0" prefWidth="159.0" />
+      <MFXButton layoutX="447.0" layoutY="403.0" onAction="#btnCreateAccountOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-login" stylesheets="@../assets/css/Style.css" text="Create " />
+      <MFXButton contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="655.0" layoutY="44.0" onAction="#btnViewAccountOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-createAccount" stylesheets="@../assets/css/Style.css">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -100,7 +100,7 @@
             </ImageView>
          </graphic>
       </MFXButton>
-      <MFXButton layoutX="509.0" layoutY="403.0" onAction="#btnUpdateAccountOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-login" stylesheets="@../assets/css/Style.css" text="Update" />
-      <MFXButton layoutX="595.0" layoutY="403.0" onAction="#btnDeleteAccountOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-login" stylesheets="@../assets/css/Style.css" text="Delete" />
+      <MFXButton layoutX="553.0" layoutY="402.0" onAction="#btnUpdateAccountOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-login" stylesheets="@../assets/css/Style.css" text="Update" />
+      <MFXButton layoutX="655.0" layoutY="402.0" onAction="#btnDeleteAccountOnAction" prefHeight="50.0" prefWidth="78.0" styleClass="mfx-button-login" stylesheets="@../assets/css/Style.css" text="Delete" />
    </children>
 </AnchorPane>

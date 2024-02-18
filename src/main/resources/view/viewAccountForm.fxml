@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="viewPane" prefHeight="510.0" prefWidth="800.0" styleClass="pane" stylesheets="@../assets/css/Style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.accountManager.controller.ViewAccountFormController">
+   <children>
+      <Text fill="#a29bfe" layoutX="42.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account" wrappingWidth="134.65576171875">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <Text fill="#2d3436" layoutX="185.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manager" wrappingWidth="170.80615234375">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblAccounts" layoutX="69.0" layoutY="118.0" prefHeight="346.0" prefWidth="663.0">
+        <columns>
+          <TableColumn fx:id="colFirstName" prefWidth="168.0" style="-fx-alignment: center;" text="First Name" />
+          <TableColumn fx:id="colLastName" minWidth="0.0" prefWidth="168.0" style="-fx-alignment: center;" text="Last Name" />
+            <TableColumn fx:id="colBirthdate" minWidth="0.0" prefWidth="158.0" style="-fx-alignment: center;" text="Birthdate" />
+            <TableColumn fx:id="colMobileNum" minWidth="0.0" prefWidth="168.0" style="-fx-alignment: center;" text="Moblie Number" />
+        </columns>
+      </TableView>
+      <MFXButton contentDisplay="GRAPHIC_ONLY" ellipsisString="" layoutX="655.0" layoutY="44.0" onAction="#btnAccountOnAction" prefHeight="50.0" prefWidth="78.0" rotate="180.0" styleClass="mfx-button-createAccount" stylesheets="@../assets/css/Style.css">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/images/add2.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </MFXButton>
+   </children>
+</AnchorPane>
